@@ -18,6 +18,24 @@
 		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 		<meta name="msapplication-TileColor" content="#da532c">
 		<meta name="theme-color" content="#ffffff">
+
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+		<script type="text/javascript">
+			(function(){
+				emailjs.init("user_c0rjkGF9P4LyuvykQYvby");
+			})();
+		</script>
+
+		<script type="text/javascript">
+			window.onload = function() {
+				document.getElementById('contact-form').addEventListener('submit', function(event) {
+					event.preventDefault();
+					// generate the contact number value
+					this.contact_number.value = Math.random() * 100000 | 0;
+					emailjs.send('gmail', 'template_i4BmPocd', this);
+				});
+			}
+		</script>
 		
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
@@ -95,9 +113,9 @@
 				<div class="content">
 					<header>
 						<h2>Projects and Other Media</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+						<!-- <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
 						Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis
-						arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
+						arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p> -->
 					</header>
 
 					<!-- Gallery  -->
@@ -134,7 +152,8 @@
 						<p>Feel free to send me ALMOST anything.</p>
 					</header>
 					<div class="box">
-						<form method="post" action="#">
+						<!-- <form method="post" action="#"> -->
+							<form id="contact-form">
 							<div class="fields">
 								<div class="field half"><input type="text" name="name" placeholder="Name" /></div>
 								<div class="field half"><input type="email" name="email" placeholder="Email" /></div>
