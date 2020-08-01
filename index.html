@@ -2,11 +2,15 @@
 
 <html>
 	<head>
-		<title>Adam Xiao</title>
+		<title>Adam Xiao | Software Engineer</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		
+		<!-- Devicons -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
+
+		<!-- Favicons -->
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -14,7 +18,8 @@
 		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 		<meta name="msapplication-TileColor" content="#da532c">
 		<meta name="theme-color" content="#ffffff">
-
+		
+		<!-- EmailJs -->
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
 		<script type="text/javascript">
 			(function(){
@@ -29,11 +34,18 @@
 					event.preventDefault();
 					// generate the contact number value
 					// this.contact_number.value = Math.random() * 100000 | 0;
-					emailjs.sendForm('gmail', 'contact_form', this);
+					emailjs.sendForm('gmail', 'contact_form', this)
+					.then(function(response) {
+						console.log('SUCCESS!', response.status, response.text)
+						alert("Message Sent!")
+						}, function(error) {
+						console.log('FAILED...', error);
+						alert("Message failed to send. \nFeel free to send your message directly to:\nxiaoadamxiao@gmail.com")
+					});
 				});
 			}
 		</script>
-		
+		<!--  -->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -62,14 +74,11 @@
 					</header>
 					<p>Full Stack Software Engineer and Aspiring ________</p>
 					<ul class="icons">
-						<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
 						<li><a href="https://medium.com/@xiaoadamxiao" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
 						<li><a href="https://github.com/adam-xiao" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://www.linkedin.com/in/adamxiao/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<!-- <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li> -->
+						<li><a href="https://www.linkedin.com/in/adamxiao/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>	
 					</ul>
-					<a href="./Resume - Adam Xiao.pdf" style="justify-content: center;">Resume</a>
+					<!-- <a href="./Resume - Adam Xiao.pdf" style="justify-content: center;">Resume</a> -->
 					<footer>
 						<a href="#one" class="button style2 down">More</a>
 					</footer>
@@ -86,11 +95,25 @@
 					I'm a full-stack software engineer experienced in Ruby on Rails, JavaScript, React, Redux with a background in Bioengineering and Neuroscience.
 					<br><br>
 					With strong skills in team facilitation, customer relations, optimization, and analogous problem solving, I seek to help companies approach projects in a holistic fashion and address any problems from a wide scope.
-						
-					<!-- Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-					id varius justo euismod in. Curabitur egestas consectetur magna. -->
 					</p>
+					<a href="./Resume - Adam Xiao.pdf">
+						<div style="text-align: center;">
+							<h5>Resume</h5>
+							<i class="fas fa-file-pdf" style="font-size: 2em;"></i>
+						</div>
+					</a>
+
+					<h5 style="text-align: center; padding-bottom: 10px;">Technologies</h5>
+					<div style="text-align: center; font-size: 2em; padding-left: 15px; padding-right: 15px;">
+						<i class="devicon-html5-plain-wordmark"></i>
+						<i class="devicon-css3-plain-wordmark"></i>
+						<i class="devicon-javascript-plain"></i>
+						<i class="devicon-postgresql-plain-wordmark"></i>
+						<i class="devicon-rails-plain-wordmark"></i>
+						<i class="devicon-react-original-wordmark"></i>
+						<i class="devicon-ruby-plain-wordmark"></i>
+					</div>
+					
 				</div>
 				<a href="#two" class="button style2 down anchored">Next</a>
 			</section>
@@ -106,9 +129,9 @@
 					All of that, both to my benefit and detriment.<br>
 					<br>
 					I enjoy pondering matters pertaining to social movements, geopolitics, and political thought.<br>
-					Also I'm a dabbler of memes and video games (well...maybe more than dabble)
+					I'm also a dabbler of memes and video games (well...maybe more than dabble)
 					</p>
-					<img src="images/me.jpg" style="float: right; width: 30%;"/>
+					<img src="images/me.jpg" style="float: right; width: 30%; padding-left: 10px;"/>
 
 				</div>
 				<a href="#work" class="button style2 down anchored">Next</a>
@@ -127,16 +150,18 @@
 					<!-- Gallery  -->
 						<div class="gallery">
 							<article class="from-left">
-								<!-- <a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a> -->
-								<a href="https://youtu.be/JSZ2iyCtEfY" class="image fit" data-poptrox="youtube"><img  src="images/horizons_thumb.png" title="Horizons" alt=""/></a>
+								<a href="https://youtu.be/JSZ2iyCtEfY" class="image fit" data-poptrox="youtube"><img src="images/horizons_thumb.png" title="Horizons" alt=""/></a>
 							</article>
 							<article class="from-right">
-								<a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a>
+								<a href="https://youtu.be/xT31G00VX8g" class="image fit" data-poptrox="youtube"><img src="images/letterbombs_thumb.gif" title="Letterbombs! - Demo Courtesy of Adam Longman" alt=""/></a>
 							</article>
-							<!-- <article class="from-left">
+
+							<!-- <article class="from-bottom" style="margin-left: auto; margin-right: auto;">
 								<a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a>
-							</article>
-							<article class="from-right">
+							</article> -->
+							
+
+							<!-- <article class="from-right">
 								<a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a>
 							</article>
 							<article class="from-left">
@@ -155,10 +180,9 @@
 				<div class="content">
 					<header>
 						<h2>Say Hello.</h2>
-						<p>Feel free to send me ALMOST anything.</p>
+						<p>Feel free to contact me about ALMOST anything.</p>
 					</header>
 					<div class="box">
-							<!-- <form id="contact-form" method="POST" action="https://formspree.io/maypvynr"> -->
 							<form id="contact-form" >
 							<div class="fields">
 								<div class="field half"><input id="name" type="text" name="name" placeholder="Name" /></div>
@@ -188,7 +212,7 @@
 
 				<!-- Menu -->
 					<ul class="menu">
-						<li>&copy;2020 AdamXiao.com</li>
+						<li>2020 AdamXiao.com</li>
 					</ul>
 
 			</footer>
